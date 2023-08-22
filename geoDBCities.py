@@ -8,4 +8,11 @@ headers = {
 	"X-RapidAPI-Host": os.environ.get("APIHOST")
 }
 
-response = requests.get(url, headers=headers)
+def getCities():
+    response = requests.get(f"{apiURL}geo/cities", headers=headers)
+    return response
+
+response = getCities()
+
+print(response.text);
+
